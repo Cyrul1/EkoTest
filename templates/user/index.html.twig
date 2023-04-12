@@ -8,6 +8,11 @@
             <tr>
                 <th>Nazwa</th>
                 <th>Jednostka miary</th>
+                <th>Ilość Przyjęta</th>
+                <th>Ilość wydana</th>
+                <th>Cena</th>
+                <th>VAT</th>
+              
             </tr>
         </thead>
         <tbody>
@@ -15,6 +20,10 @@
                 <tr>
                     <td>{{ artykul.Nazwa }}</td>
                     <td>{{ artykul.JednostkaMiary }}</td>
+                    <td>{{ artykul.IloscPrzyjeta }}</td>
+                    <td>{{ artykul.IloscWydana }}</td>
+                    <td>{{ artykul.Cena }}</td>
+                    <td>{{ artykul.VAT }}</td>
                 </tr>
             {% endfor %}
         </tbody>

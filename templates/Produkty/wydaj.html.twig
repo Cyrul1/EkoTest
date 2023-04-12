@@ -1,14 +1,11 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Dodaj nowy Artykul</h1>
+    <h1>Wydaj Artykul</h1>
 
 {{ form_start(form) }}
     {{ form_row(form.Nazwa) }}
-    {{ form_row(form.JednostkaMiary) }}
-    {{ form_row(form.Cena) }}
-    {{ form_row(form.VAT) }}
-    {{ form_row(form.IloscPrzyjeta) }}
+    {{ form_row(form.IloscWydana) }}
     {{ form_widget(form.magazyny)}}
     {{ form_row(form.zapisz) }}
 {{ form_end(form) }}

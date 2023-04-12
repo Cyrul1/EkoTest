@@ -1,31 +1,42 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}My Articles{% endblock %}
+{% block title %}Pracownik{% endblock %}
 
 {% block body %}
-    <h1>My Articles</h1>
+    <h1>Moje Magazyny</h1>
     {{ form_start(form) }}
     {{ form_widget(form) }}
     {{ form_end(form) }}
 
     {% if artykuly is not empty %}
-        <table class="table">
-            <thead>
+    <h1>Twoje artykuły:</h1>
+
+    <table>
+        <thead>
             <tr>
                 <th>Nazwa</th>
+                <th>Jednostka miary</th>
+                <th>Ilość Przyjęta</th>
+                <th>Ilość wydana</th>
                 <th>Cena</th>
-                <th>Opis</th>
+                <th>VAT</th>
+              
             </tr>
-            </thead>
-            <tbody>
+        </thead>
+        <tbody>
             {% for artykul in artykuly %}
                 <tr>
                     <td>{{ artykul.Nazwa }}</td>
                     <td>{{ artykul.JednostkaMiary }}</td>
-                    <td> <button></button></td>
+                    <td>{{ artykul.IloscPrzyjeta }}</td>
+                    <td>{{ artykul.IloscWydana }}</td>
+                    <td>{{ artykul.Cena }},-</td>
+                    <td>{{ artykul.VAT }}%</td>
                 </tr>
             {% endfor %}
-            </tbody>
-        </table>
+        </tbody>
+    </table>
     {% endif %}
+    <a href="{{ path('app_dodajArt') }}"><button>Przyjmij artykul</button></a>
+    <a href="{{ path('app_wydaj') }}"><button>wydaj artykul</button></a>
 {% endblock %}
