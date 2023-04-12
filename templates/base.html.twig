@@ -12,8 +12,20 @@
         {% block javascripts %}
             {{ encore_entry_script_tags('app') }}
         {% endblock %}
+     
     </head>
     <body>
-        {% block body %}{% endblock %}
+        <div style="text-align: right">
+        {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+        <a href="{{ path('app_logout') }}"><button>Wyloguj</button></a>
+        {% endif %}
+
+        {% if is_granted('ROLE_ADMIN') %}
+            <a href="{{ path('app_admin') }}"><button>Panel Administratora</button></a>
+        {% endif %}
+        </div>
+        {% block body %}
+        
+        {% endblock %}
     </body>
 </html>
