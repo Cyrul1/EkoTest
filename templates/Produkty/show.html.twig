@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}My Articles{% endblock %}
+
+{% block body %}
+    <h1>My Articles</h1>
+    {{ form_start(form) }}
+    {{ form_widget(form) }}
+    {{ form_end(form) }}
+
+    {% if artykuly is not empty %}
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Nazwa</th>
+                <th>Cena</th>
+                <th>Opis</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for artykul in artykuly %}
+                <tr>
+                    <td>{{ artykul.Nazwa }}</td>
+                    <td>{{ artykul.JednostkaMiary }}</td>
+                    <td> <button></button></td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    {% endif %}
+{% endblock %}

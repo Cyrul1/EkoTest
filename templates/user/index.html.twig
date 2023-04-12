@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Twoje artykuły:</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Nazwa</th>
+                <th>Jednostka miary</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for artykul in artykuly %}
+                <tr>
+                    <td>{{ artykul.Nazwa }}</td>
+                    <td>{{ artykul.JednostkaMiary }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

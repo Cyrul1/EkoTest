@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Lista magazynów</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Nazwa magazynu</th>
+                <th>Pracownik magazynu</th>
+                <th>Artykuły w magazynie</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for magazyn in magazyny %}
+                <tr>
+                    <td>{{ magazyn.getNazwa() }}</td>
+                    <td>
+                        {% for pracownik in magazyn.getPracownikMagazynu() %}
+                            {{ pracownik.getUsername() }}{% if not loop.last %}, {% endif %}
+                        {% endfor %}
+                    </td>
+                    <td>
+                        {% for Artykul in magazyn.getArtykuly()%}
+                            {{ Artykul.getNazwa() }} {{ Artykul.getJednostkaMiary() }} {% if not loop.last %}, {% endif %}
+                        {% endfor %}
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

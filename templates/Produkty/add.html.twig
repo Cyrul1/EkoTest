@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Dodaj nowy Artykul</h1>
+
+{{ form_start(form) }}
+    {{ form_row(form.Nazwa) }}
+    {{ form_row(form.JednostkaMiary) }}
+    {{ form_row(form.Magazyny) }}
+    {{ form_row(form.zapisz) }}
+{{ form_end(form) }}
+{% endblock %}
